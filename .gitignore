@@ -1,0 +1,11 @@
+# 签名密钥与口令：绝对不要提交
+*.keystore
+keystore-password.txt
+
+# 构建产物
+build/
+*.apk
+
+# 杂项
+sdk-dl/
+.DS_Store
