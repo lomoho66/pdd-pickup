@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PDD取件</string>
+    <string name="widget_desc">2×2 双入口：取快递 / 身份码，一点直达拼多多</string>
+    <string name="widget_pick_desc">1×1 单入口：一点直达拼多多取快递（待取件包裹）</string>
+    <string name="widget_id_desc">1×1 单入口：一点直达拼多多身份码</string>
+    <string name="widget_large_label">" "</string>
+    <string name="widget_pick_label">取快递</string>
+    <string name="widget_id_label">身份码</string>
+</resources>

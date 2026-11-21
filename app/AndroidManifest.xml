@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lomoho.pddpickup"
+    android:versionCode="1"
+    android:versionName="2.0">
+
+    <uses-sdk
+        android:minSdkVersion="26"
+        android:targetSdkVersion="34" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <!-- 桌面图标二选一：两个别名指向主页，默认启用经典红，用户可在「更多」里切换 -->
+        <activity-alias
+            android:name=".IconClassic"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@mipmap/ic_classic"
+            android:label="@string/app_name"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".IconMidnight"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/ic_midnight"
+            android:label="@string/app_name"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- 子页（不对外导出） -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EmojiPickerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DonateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+
+        <!-- 透明跳板：小组件点击后经它打开拼多多对应页面，随即自毁；半透明主题是为了能触发点按震动（系统触感反馈，免权限） -->
+        <activity
+            android:name=".JumpActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 2×2 双入口小组件：取件码 + 身份码 -->
+        <receiver
+            android:name=".PickupWidget"
+            android:exported="false"
+            android:label="@string/widget_large_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+
+        <!-- 1×1 单入口小组件：取件码 -->
+        <receiver
+            android:name=".PickupWidgetSmallPick"
+            android:exported="false"
+            android:label="@string/widget_pick_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info_pick" />
+        </receiver>
+
+        <!-- 1×1 单入口小组件：身份码 -->
+        <receiver
+            android:name=".PickupWidgetSmallId"
+            android:exported="false"
+            android:label="@string/widget_id_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info_id" />
+        </receiver>
+    </application>
+</manifest>
