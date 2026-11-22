@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 
-/** 轻量设置存储：外观模式、自动跳转、小组件样式（文字/图标 + 自定义 emoji）。零权限，存应用私有目录。 */
+/** 轻量设置存储：外观模式、小组件样式（文字/图标 + 自定义 emoji）。零权限，存应用私有目录。 */
 public final class Prefs {
 
     private static final String FILE = "ui_prefs";
@@ -24,15 +24,6 @@ public final class Prefs {
 
     public static void setThemeMode(Context ctx, String v) {
         sp(ctx).edit().putString("theme_mode", v).apply();
-    }
-
-    /** 自动跳转："" 关 / pick / id */
-    public static String autoJump(Context ctx) {
-        return sp(ctx).getString("auto_jump", "");
-    }
-
-    public static void setAutoJump(Context ctx, String v) {
-        sp(ctx).edit().putString("auto_jump", v).apply();
     }
 
     /** 小组件样式：icon 图标版 / text 文字版 */

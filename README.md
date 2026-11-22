@@ -102,7 +102,11 @@ export ANDROID_HOME=/path/to/android-sdk
 
 **@lomoho** —— 酷安 / GitHub 同名
 
-如果这个小工具帮你省了时间，可以在 App 的「作者信息」页请作者喝杯咖啡 ☕
+如果这个小工具帮你省了时间，欢迎请作者喝杯咖啡 ☕
+
+<a href="https://afdian.com/a/lomoho"><img src="docs/images/afdian.jpg" width="300"></a>
+
+（点击图片前往爱发电）
 
 ## 许可证
 
