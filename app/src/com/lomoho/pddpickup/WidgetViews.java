@@ -9,7 +9,7 @@ import android.widget.RemoteViews;
 
 /**
  * 小组件内容构建：按用户选的样式出图 —
- * 图标版用 emoji（可自选），文字版取快递显示「取」、身份码显示「ID」（文字不可改）。
+ * 图标版用 emoji（可自选）；文字版 2×2 直接显示「取快递 / 身份码」，1×1 显示「取 / ID」（文字不可改）。
  * 三个 provider 与设置页的立即刷新都走这里。
  */
 public final class WidgetViews {
@@ -21,9 +21,9 @@ public final class WidgetViews {
         RemoteViews views = new RemoteViews(ctx.getPackageName(), R.layout.widget_pickup);
         boolean icon = "icon".equals(Prefs.widgetMode(ctx));
         views.setTextViewText(R.id.widget_btn_pick,
-                (icon ? Prefs.emojiPick(ctx) : "取") + " 取快递");
+                icon ? Prefs.emojiPick(ctx) + " 取快递" : "取快递");
         views.setTextViewText(R.id.widget_btn_id,
-                (icon ? Prefs.emojiId(ctx) : "ID") + " 身份码");
+                icon ? Prefs.emojiId(ctx) + " 身份码" : "身份码");
         views.setOnClickPendingIntent(R.id.widget_btn_pick,
                 WidgetJump.pending(ctx, widgetId, PddLinks.TARGET_PACKAGES));
         views.setOnClickPendingIntent(R.id.widget_btn_id,

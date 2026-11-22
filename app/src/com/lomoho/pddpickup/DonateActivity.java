@@ -78,7 +78,7 @@ public class DonateActivity extends Activity {
         root.addView(btnWrap, bLp);
 
         TextView hint = new TextView(this);
-        hint.setText("也可以截图保存卡片，用爱发电扫码");
+        hint.setText("点击图片或按钮支持作者");
         hint.setTextSize(12);
         hint.setTextColor(Ui.grey(this));
         hint.setGravity(Gravity.CENTER);

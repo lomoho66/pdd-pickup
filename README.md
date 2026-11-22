@@ -1,10 +1,15 @@
+[![PDD取件](https://socialify.git.ci/lomoho66/pdd-pickup/image?description=1&font=Inter&language=1&name=1&owner=1&stargazers=1&theme=Auto)](https://github.com/lomoho66/pdd-pickup)
+
 # PDD取件
 
 > 桌面一点，直达拼多多取件页 —— 零权限、不联网的安卓小工具
 
-[![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](LICENSE)
-![Android](https://img.shields.io/badge/Android-8.0%2B-brightgreen.svg)
-![Version](https://img.shields.io/badge/version-2.0-red.svg)
+[![Stars](https://img.shields.io/github/stars/lomoho66/pdd-pickup?style=flat&logo=github&label=Stars)](https://github.com/lomoho66/pdd-pickup/stargazers)
+[![Release](https://img.shields.io/github/v/release/lomoho66/pdd-pickup?label=Release)](https://github.com/lomoho66/pdd-pickup/releases)
+[![License](https://img.shields.io/github/license/lomoho66/pdd-pickup?label=License)](LICENSE)
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?logo=telegram&logoColor=white)](https://t.me/lom0ho)
+
+![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white)
 ![Size](https://img.shields.io/badge/size-~195_KB-lightgrey.svg)
 
 <p>
@@ -25,7 +30,8 @@
 
 - **桌面小组件** —— 2×2 双入口 / 1×1 单入口，点一下直达取件页或身份码页
 - **App 内双入口** —— 取快递、身份码，两个大入口都在主页，不藏菜单
-- **小组件双风格** —— 文字版（固定的「取」/「ID」）与图标版，图标版的 emoji 可自选（24 个常用款）
+- **长按图标快捷菜单** —— 长按桌面图标，选「取件页 / 身份码」直达
+- **小组件双风格** —— 文字版（固定的「取」/「ID」）与图标版，图标版的 emoji 可自选（72 个快递主题精选）
 - **应用图标可换** —— 经典红 / 午夜黑两款
 - **明暗三档** —— 自动 / 浅色 / 深色，主页右上角圆钮一键循环切换
 - **触感反馈** —— 每次点按都有轻震与弹簧回弹动画
@@ -111,3 +117,13 @@ export ANDROID_HOME=/path/to/android-sdk
 ## 许可证
 
 [GPL-3.0](LICENSE) © 2026 lomoho
+
+## 📈 Star History
+
+<a href="https://star-history.com/#lomoho66/pdd-pickup&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=lomoho66/pdd-pickup&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=lomoho66/pdd-pickup&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=lomoho66/pdd-pickup&type=Date" />
+  </picture>
+</a>

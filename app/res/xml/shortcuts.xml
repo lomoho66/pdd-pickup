@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 长按桌面图标的快捷菜单：两个入口直达 JumpActivity（与小组件同一跳板） -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="pickup"
+        android:enabled="true"
+        android:icon="@mipmap/ic_classic"
+        android:shortcutShortLabel="@string/shortcut_pick_label"
+        android:shortcutLongLabel="@string/shortcut_pick_label">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.lomoho.pddpickup"
+            android:targetClass="com.lomoho.pddpickup.JumpActivity">
+            <extra
+                android:name="target"
+                android:value="packages" />
+        </intent>
+    </shortcut>
+    <shortcut
+        android:shortcutId="idcode"
+        android:enabled="true"
+        android:icon="@drawable/ic_id_dark"
+        android:shortcutShortLabel="@string/widget_id_label"
+        android:shortcutLongLabel="@string/widget_id_label">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.lomoho.pddpickup"
+            android:targetClass="com.lomoho.pddpickup.JumpActivity">
+            <extra
+                android:name="target"
+                android:value="code" />
+        </intent>
+    </shortcut>
+</shortcuts>

@@ -42,10 +42,10 @@ public class AboutActivity extends Activity {
         thanksHeading.setTextColor(Ui.grey(this));
         card.addView(thanksHeading);
 
+        card.addView(Ui.infoRow(this, "技术支持", "🥐 Muse by Meta"), rowLp(12));
 
         root.addView(card);
 
-        card.addView(Ui.infoRow(this, "技术支持", "🥐 Muse by Meta"), rowLp(12));
         // 打赏入口：页面下方居中（从更多页移入）
         LinearLayout donateWrap = new LinearLayout(this);
         donateWrap.setGravity(Gravity.CENTER_HORIZONTAL);

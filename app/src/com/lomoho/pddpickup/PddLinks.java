@@ -19,9 +19,9 @@ public final class PddLinks {
     public static final String URI_CODE =
             "pinduoduo://com.xunmeng.pinduoduo/mdkd/package?tab=ID_CODE&entry_source=11";
 
-    /** 取快递页（待取件包裹列表，每件包裹的取快递在列表里） */
+    /** 取快递页（待取件包裹列表；必须显式带 tab=PACKAGE，否则从身份码页切不回来——拼多多对已打开的页面不重置标签，2026-11-22 实测验证） */
     public static final String URI_PACKAGES =
-            "pinduoduo://com.xunmeng.pinduoduo/mdkd/package?entry_source=11";
+            "pinduoduo://com.xunmeng.pinduoduo/mdkd/package?tab=PACKAGE&entry_source=11";
 
     /** 网页兜底（App 未装时用浏览器打开） */
     public static final String URI_WEB =
@@ -39,9 +39,10 @@ public final class PddLinks {
 
     /** 依次尝试：深链直达 → 拉起拼多多首页 → 网页兜底 → 提示未安装。 */
     public static void open(Context ctx, String target) {
+        String uri = uriFor(target);
         // 1) 深链直达目标页
         try {
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(uriFor(target)));
+            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
             i.setPackage(PKG);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             ctx.startActivity(i);
@@ -50,7 +51,7 @@ public final class PddLinks {
         }
         // 2) 不带包名再试一次（个别 ROM 对 setPackage 有限制）
         try {
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(uriFor(target)));
+            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             ctx.startActivity(i);
             return;

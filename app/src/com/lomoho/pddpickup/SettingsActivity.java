@@ -301,6 +301,8 @@ public class SettingsActivity extends Activity {
         box.setGravity(Gravity.CENTER_VERTICAL);
         TextView e = new TextView(this);
         e.setText(pick ? Prefs.emojiPick(this) : Prefs.emojiId(this));
+        // 同选择页：显式不透明黑，避免主题默认色透明度让彩色 emoji 发灰
+        e.setTextColor(0xFF000000);
         e.setTextSize(20);
         box.addView(e);
         ImageView arrow = new ImageView(this);

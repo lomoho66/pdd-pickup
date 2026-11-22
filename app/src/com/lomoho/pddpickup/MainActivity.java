@@ -139,7 +139,8 @@ public class MainActivity extends Activity {
         root.addView(id, iLp);
 
         TextView tip = new TextView(this);
-        tip.setText("桌面小组件有 2×2 双入口版和 1×1 单入口版可选");
+        tip.setText("添加桌面小组件/长按 APP 图标\n均可呼出快捷入口");
+        tip.setLineSpacing(0, 1.3f);
         tip.setTextSize(12);
         tip.setTextColor(Ui.grey(this));
         tip.setGravity(Gravity.CENTER);
